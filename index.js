@@ -45,8 +45,7 @@ function game() {
             playerSelectionBtns.forEach(btn => {
                 btn.addEventListener("click", () => {
                     if (playerScore < 5 && computerScore < 5) {
-
-                        playRound(btn.innerText, getComputerChoice())
+                        playRound(btn.className, getComputerChoice())
                     }
                     else {
                         if (playerScore>computerScore) {
