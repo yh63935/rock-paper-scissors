@@ -45,26 +45,37 @@ function game() {
             playerSelectionBtns.forEach(btn => {
                 btn.addEventListener("click", () => {
                     if (playerScore < 5 && computerScore < 5) {
-
-                        playRound(btn.innerText, getComputerChoice())
+                        playRound(btn.className, getComputerChoice())
                     }
                     else {
-                        if (playerScore>computerScore) {
+                        resetGame();
+                        if (playerScore > computerScore) {
                             console.log('You win!')
+                
                         }
-                        else if (playerScore===computerScore) {
+                        else if (playerScore === computerScore) {
                             console.log('A draw! Play again?')
                         }
                         else {
                             console.log('You lose :(')
                         }
                     }
+                    
+                    console.log(playerScore)
+                    console.log(computerScore)
+                    
                 })
             })
 }
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+}
+
+let resultsEl = document.querySelector(".results");
 game()
-console.log(playerScore)
-console.log(computerScore)
+
 
 
 
