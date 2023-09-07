@@ -39,6 +39,7 @@ const rockBtn = document.querySelector(".rock");
 const paperBtn = document.querySelector('.paper');
 const scissorsBtn = document.querySelector('.scissors');
 const playerSelectionBtns = document.querySelectorAll("button");
+let resultsEl = document.querySelector(".results");
 
 // Play a game of rock, paper, scissors that ends when player or computer reaches 5 points
 function game() {        
@@ -50,14 +51,14 @@ function game() {
                     else {
                         resetGame();
                         if (playerScore > computerScore) {
-                            console.log('You win!')
+                            resultsEl.innerText = "You win the game. You are transported back like nothing ever happened.";
                 
                         }
                         else if (playerScore === computerScore) {
-                            console.log('A draw! Play again?')
+                            resultsEl.innerText = 'We tied. You need to play again to determine your fate.';
                         }
                         else {
-                            console.log('You lose :(')
+                            resultsEl.innerText = 'You lose the game. I will lead you to the afterlife.';
                         }
                     }
                     
@@ -73,7 +74,6 @@ function resetGame() {
     computerScore = 0;
 }
 
-let resultsEl = document.querySelector(".results");
 game()
 
 
