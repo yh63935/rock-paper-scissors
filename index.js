@@ -1,13 +1,21 @@
 
 let playerScore = 0
 let computerScore = 0
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector('.paper');
+const scissorsBtn = document.querySelector('.scissors');
+const playerSelectionBtns = document.querySelectorAll("button");
+const resultsEl = document.querySelector(".results");
+const playerScoreEl = document.querySelector(".playerScore")
+const computerScoreEl = document.querySelector(".computerScore")
+
 
 // Randomly returns either ‘Rock’, ‘Paper’ or ‘Scissors’ for computer's turn
 function getComputerChoice() {
     const choices = ['Rock', 'Paper' , 'Scissors']
-    //get random index from array
+    // Get random index from array
     let randomIndex = (Math.floor(Math.random() * 3))
-    //get random choice from array
+    // Get random choice from array
     let randomTurn = choices[randomIndex]
     return randomTurn
 }
@@ -35,11 +43,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const rockBtn = document.querySelector(".rock");
-const paperBtn = document.querySelector('.paper');
-const scissorsBtn = document.querySelector('.scissors');
-const playerSelectionBtns = document.querySelectorAll("button");
-
 // Play a game of rock, paper, scissors that ends when player or computer reaches 5 points
 function game() {        
             playerSelectionBtns.forEach(btn => {
@@ -49,20 +52,11 @@ function game() {
                     }
                     else {
                         resetGame();
-                        if (playerScore > computerScore) {
-                            console.log('You win!')
-                
-                        }
-                        else if (playerScore === computerScore) {
-                            console.log('A draw! Play again?')
-                        }
-                        else {
-                            console.log('You lose :(')
-                        }
+                        displayResults();         
                     }
                     
-                    console.log(playerScore)
-                    console.log(computerScore)
+                    playerScoreEl.innerText = "Player score: " + playerScore;
+                    computerScoreEl.innerText = "Grim Reaper score: " + computerScore;
                     
                 })
             })
@@ -73,15 +67,22 @@ function resetGame() {
     computerScore = 0;
 }
 
-let resultsEl = document.querySelector(".results");
+function displayResults() {
+    if (playerScore > computerScore) {
+        resultsEl.innerText = "You win the game. You are transported back like nothing ever happened.";
+
+    }
+    else if (playerScore === computerScore) {
+        resultsEl.innerText = 'We tied. You need to play again to determine your fate.';
+    }
+    else {
+        resultsEl.innerText = 'You lose the game. I will lead you to the afterlife.';
+    }
+}
 game()
 
 
 
-
-//     Add a div for displaying results and change all of your console.logs into DOM methods.
-//     Display the running score, and announce a winner of the game once one player reaches 5 points.
-//     You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of a programmer’s life.
 
 // Once you’re all done with your UI and made sure everything’s satisfactory, ensure all of your changes are committed to the rps-ui branch with git status before continuing.
 // Now let’s take a look at how we can merge the changes from our rps-ui branch back to our main branch.
