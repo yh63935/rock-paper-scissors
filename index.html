@@ -2,18 +2,42 @@
 <html lang = "en">
     <head>
         <meta charset = 'utf-8' name = 'viewport' content = "width = device-width,initial-scale = 1.0">
+        <link rel = "stylesheet" href = "styles.css">
         <title>Rock-paper-scissors</title>
     </head>
     <body>
-        <h1>Grim Reaper VS. Your Life</h1>
-        <button class = "rock">Rock</button>
-        <button class = "paper">Paper</button>
-        <button class = "scissors">Scissors</button>
-        <div>
-            <h2 class = "playerScore"></h2>
-            <h2 class = "computerScore"></h2>
+        <div class="game-container">
+            <h1>Rock Paper Scissors with the Grim Reaper</h1>
+            <h3>You have one chance to save your life</h3>
+            <p>You're walking to your favorite lunch place, when you notice the kid next to you darting the street after 
+                his basketball that rolled down the street. There's a truck coming down the street.
+            </p>
+            <p>Based on pure instinct, you chase after the kid and push him onto the sidewalk.</p>
+            <p>Everything suddenly stops. You sense a presences next to you.</p>
+            <p>You turn around and see the Grim Reaper next to you.</p>
+            <p>"Am I dead?" you ask</p>
+            <p>"No," he says, "you are in the space between life and death right now, but you will be soon."</p>
+            <p>"Since you lived your life to your fullest and your life is in jeapordy because you did a good deed,
+                I can give you one chance to save your life."
+            </p>
+            <p>"Play a game of rock, paper, scissors with me."</p>
+            <p>"If you win, it'll be like nothing happened. You'll go back to living your life until the next time we meet."</p>
+            <p>"If you lose, I'll have to take you back to the afterlife as planned."</p>
+            <button class = "rock">
+                <img src = "assets/rock.png" alt = "Rock">
+            </button>
+            <button class = "paper">
+                <img src = "assets/paper.png" alt = "Paper icon">
+            </button>
+            <button class = "scissors">
+                <img src = "assets/scissors.png" alt = "Scissors">
+            </button>
+            <div>
+                <h2 class = "playerScore"></h2>
+                <h2 class = "computerScore"></h2>
+            </div>
+            <div class = "results"></div>
         </div>
-        <div class = "results"></div>
         <script src = "index.js"></script>
     </body>
 </html>
