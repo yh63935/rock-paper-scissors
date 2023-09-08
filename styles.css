@@ -1,0 +1,25 @@
+body {
+    background-image: url("assets/grim-reaper.webp");
+    background-size: cover;
+}
+
+.game-container {
+    background: rgba(255,255,255,0.5);
+    padding: 30px 10px;
+    width: 40%;
+    text-align: center;
+    margin: 100px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+
+button {
+    background: rgb(0,0,0);
+    margin: 10px;
+    padding: 20px;
+}
