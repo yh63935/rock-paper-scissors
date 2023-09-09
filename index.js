@@ -4,7 +4,8 @@ let computerScore = 0
 const rockBtn = document.querySelector(".rock");
 const paperBtn = document.querySelector('.paper');
 const scissorsBtn = document.querySelector('.scissors');
-const playerSelectionBtns = document.querySelectorAll("button");
+const playerSelectionBtns = document.querySelectorAll("button:not(.try-again)");
+const tryAgainBtn = document.querySelector(".try-again")
 const resultsEl = document.querySelector(".results");
 const playerScoreEl = document.querySelector(".playerScore")
 const computerScoreEl = document.querySelector(".computerScore")
@@ -44,22 +45,27 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Play a game of rock, paper, scissors that ends when player or computer reaches 5 points
-function game() {        
+function game() {  
+            tryAgainBtn.addEventListener("click", () => {
+                resetGame();
+                playerScoreEl.innerText = "Player score: " + playerScore;
+                computerScoreEl.innerText = "Grim Reaper score: " + computerScore;
+            });
             playerSelectionBtns.forEach(btn => {
                 btn.addEventListener("click", () => {
                     if (playerScore < 5 && computerScore < 5) {
                         playRound(btn.className, getComputerChoice())
                     }
                     else {
-                        resetGame();
                         displayResults();         
-                    }
-                    
+                    }                    
                     playerScoreEl.innerText = "Player score: " + playerScore;
                     computerScoreEl.innerText = "Grim Reaper score: " + computerScore;
                     
                 })
             })
+            playerScoreEl.innerText = "Player score: " + playerScore;
+            computerScoreEl.innerText = "Grim Reaper score: " + computerScore;
 }
 
 function resetGame() {
