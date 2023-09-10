@@ -71,6 +71,7 @@ function game() {
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
+    resultsEl.innerText = "";
 }
 
 function displayResults() {
