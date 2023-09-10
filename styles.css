@@ -1,11 +1,21 @@
 body {
     background-image: url("assets/grim-reaper.webp");
     background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+h1, h3 {
+    font-family: 'Metal Mania', cursive;
+}
+
+h1 {
+    font-size: 40px;
 }
 
 .game-container {
     background: rgba(255,255,255,0.5);
-    padding: 30px 10px;
+    padding: 50px;
     width: 40%;
     text-align: center;
     margin: 100px;
@@ -19,7 +29,9 @@ img {
 
 
 button {
-    background: rgb(0,0,0);
-    margin: 10px;
+    background: black;
+    margin: 20px;
     padding: 20px;
+    color: white;
+    font-size: 16px;
 }
