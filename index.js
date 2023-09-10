@@ -83,7 +83,9 @@ function displayResults() {
         resultsEl.innerText = 'We tied. You need to play again to determine your fate.';
     }
     else {
-        resultsEl.innerText = 'You lose the game. I will lead you to the afterlife.';
+        resultsEl.innerText = `You lose the game. I will lead you to the afterlife. 
+        
+        You may have lost, but you can try to save the version of you in an alternate universe.`;
     }
 }
 game()
